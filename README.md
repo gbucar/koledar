@@ -48,7 +48,7 @@ Najlažje se aplikacijo požene z Docker Compose:
 ### Docker
 Če Docker Compose ni na voljo, se ročno zgradi Docker sliko in jo požene:
 1. grajenje: `docker build -t koledar .`
-2. poganjanje: `docker run -p 3000:3000 koledar`
+2. poganjanje: `docker run -p 3000:3000 -v ./holidays.txt:/app/holidays.txt koledar`
 3. odpri [http://localhost:3000](http://localhost:3000)
 
 ### Node
