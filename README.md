@@ -32,8 +32,33 @@ Primeri:
 - [`src/lib/date.ts`](`src/lib/date.ts`) vsebuje pomožne funkcije in razred Date
 - [`src/routes/+page.server.ts`](`src/routes/+page.server.ts`) prebere datoteko holidays.txt in jo pošlje [`src/routes/+page.svelte`](`src/routes/+page.svelte`), ki je odgovorna za prikaz koledarja
 
+## Poganjanje projekta
+Spodaj so predstavljeni trije načini za poganjanje aplikacije, razvrščeni so po zahtevnosti.
+Pred zaganjanjem je potrebno klonirati repozitorij:
+```bash
+git clone git@github.com:gbucar/koledar.git
+cd koledar
+```
 
+### Docker Compose
+Najlažje se aplikacijo požene z Docker Compose:
+1. `docker compose up`
+2. odpri [http://localhost:3000](http://localhost:3000)
 
+### Docker
+Če Docker Compose ni na voljo, se ročno zgradi Docker sliko in jo požene:
+1. grajenje: `docker build -t koledar .`
+2. poganjanje: `docker run -p 3000:3000 koledar`
+3. odpri [http://localhost:3000](http://localhost:3000)
 
+### Node
+Zadnja opcija je poganjanje v node okolju, za to je priporočen nodejs22:
+1. naloži odvisnosti: `npm install`
+2. zgradi aplikacijo: `npm run build`
+3. poženi zgrajeno aplikacijo: `node build`
+4. odpri [http://localhost:3000](http://localhost:3000)
 
-##
+## Poganjanje za razvijanje
+1. naloži odvisnosti: `npm install`
+2. poženi aplikacijo za razvijanje: `npm run dev -- --open`
+3. če se ne odpre samodejno, odpri [http://localhost:5173](http://localhost:5173)
