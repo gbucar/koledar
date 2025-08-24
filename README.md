@@ -62,3 +62,6 @@ Zadnja opcija je poganjanje v node okolju, za to je priporočen nodejs22:
 1. naloži odvisnosti: `npm install`
 2. poženi aplikacijo za razvijanje: `npm run dev -- --open`
 3. če se ne odpre samodejno, odpri [http://localhost:5173](http://localhost:5173)
+
+## Licence
+[Favicon](https://www.svgrepo.com/svg/533385/calendar-check), [MonthArrows](https://www.svgrepo.com/svg/520523/arrow-left-5): [CC Attribution License](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en)
