@@ -65,3 +65,6 @@ Zadnja opcija je poganjanje v node okolju, za to je priporočen nodejs22:
 
 ## Licence
 [Favicon](https://www.svgrepo.com/svg/533385/calendar-check), [MonthArrows](https://www.svgrepo.com/svg/520523/arrow-left-5): [CC Attribution License](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en)
+
+## Uporaba umetne inteligence
+Izjavljam, da pri programiranju te aplikacije nisem uporabil umetne inteligence, razen enkrat za preverjanje te README datoteke.
