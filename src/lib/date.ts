@@ -98,7 +98,7 @@ export const getDatesForMonth = (year: number, month: number): Date[] => {
   return days;
 };
 
-export const padDates = (year, month, dates: Date[]): Date[] => {
+const padDatesPrevious = (year, month, dates: Date[]): Date[] => {
   if (dates[0].dayOfWeek === 1) return dates;
 
   let previousYear = year;
@@ -112,11 +112,45 @@ export const padDates = (year, month, dates: Date[]): Date[] => {
   }
 
   const previousMonthDates = getDatesForMonth(previousYear, previousMonth);
-  console.log(previousMonthDates);
   return [...previousMonthDates.slice(-(dates[0].dayOfWeek - 1)), ...dates];
 };
 
-export const getPaddedDates = (year, month) => {
+const padDatesFollowing = (
+  year: number,
+  month: number,
+  dates: Date[],
+): Date[] => {
+  if (dates[dates.length - 1].dayOfWeek === 7) return dates;
+
+  let followingYear = year;
+  let followingMonth = month;
+
+  if (month === 12) {
+    followingYear += 1;
+    followingMonth = 1;
+  } else {
+    followingMonth += 1;
+  }
+
+  const followingMonthDates = getDatesForMonth(followingYear, followingMonth);
+  console.log(followingMonthDates);
+  return [
+    ...dates,
+    ...followingMonthDates.slice(0, 7 - dates[dates.length - 1].dayOfWeek),
+  ];
+};
+
+export const padDates = (
+  year: number,
+  month: number,
+  dates: Date[],
+): Date[] => {
+  dates = padDatesPrevious(year, month, dates);
+  dates = padDatesFollowing(year, month, dates);
+  return dates;
+};
+
+export const getPaddedDates = (year: number, month: number) => {
   let dates = getDatesForMonth(year, month);
   return padDates(year, month, dates);
 };

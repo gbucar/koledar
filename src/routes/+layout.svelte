@@ -7,6 +7,9 @@
 
 <svelte:head>
     <link rel="icon" href={favicon} />
+    <title>Koledar</title>
 </svelte:head>
 
-{@render children?.()}
+<div class="flex flex-col h-full gap-5 text-stone-900">
+    {@render children?.()}
+</div>
