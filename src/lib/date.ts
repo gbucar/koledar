@@ -133,7 +133,6 @@ const padDatesFollowing = (
   }
 
   const followingMonthDates = getDatesForMonth(followingYear, followingMonth);
-  console.log(followingMonthDates);
   return [
     ...dates,
     ...followingMonthDates.slice(0, 7 - dates[dates.length - 1].dayOfWeek),
