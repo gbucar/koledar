@@ -124,3 +124,19 @@ export const parseHolidays = (holidays: string): Date[] => {
     return Date.fromString(date, repeats);
   });
 };
+
+export const monthToString = (month: number): string =>
+  [
+    "januar",
+    "febuar",
+    "marec",
+    "april",
+    "maj",
+    "junij",
+    "julij",
+    "avgust",
+    "september",
+    "oktober",
+    "november",
+    "december",
+  ][month];

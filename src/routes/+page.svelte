@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { Date, getPaddedDates, parseHolidays } from "$lib/date";
+    import {
+        Date,
+        getPaddedDates,
+        monthToString,
+        parseHolidays,
+    } from "$lib/date";
     import { onMount } from "svelte";
     import type { PageProps } from "./$types";
 
@@ -24,7 +29,11 @@
 </script>
 
 <input type="number" bind:value={year} />
-<input type="number" max="12" min="1" bind:value={month} />
+<select name="month" bind:value={month}>
+    {#each { length: 12 }, month}
+        <option value={month + 1}>{monthToString(month)}</option>
+    {/each}
+</select>
 <input
     type="text"
     placeholder="2025-08-24"
