@@ -18,11 +18,13 @@ export class Date {
     this.repeats = repeats;
   }
 
+  // parses string in format yyyy-mm-dd and returns Date object
   static fromString(date: string, repeats: string = "n"): Date {
     const [year, month, day] = date.split("-").map((x) => parseInt(x));
     return new Date(year, month, day, repeats);
   }
 
+  // compares this to other Date, returns true if dates collide at any date
   compareTo(other: Date): boolean {
     return (
       (this.year === other.year ||
@@ -46,6 +48,7 @@ export class Date {
     );
   }
 
+  // returns day of week for this Date (1-7)
   get dayOfWeek() {
     const jdn = this.getJDN(this.year, this.month, this.day);
     return (jdn % 7) + 1;

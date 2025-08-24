@@ -28,13 +28,14 @@
     });
 </script>
 
-<input type="number" bind:value={year} />
+<input name="year" type="number" bind:value={year} />
 <select name="month" bind:value={month}>
     {#each { length: 12 }, month}
         <option value={month + 1}>{monthToString(month)}</option>
     {/each}
 </select>
 <input
+    name="date"
     type="text"
     placeholder="2025-08-24"
     bind:value={selectedDateRawValue}
